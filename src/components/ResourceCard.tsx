@@ -53,11 +53,29 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
       </div>
 
       <div className="flex gap-2 pt-1">
-        <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+        <button
+          onClick={() => {
+            if (resource.file_url && resource.file_url !== "#") {
+              window.open(resource.file_url, "_blank");
+            } else {
+              toast.info("PDF not available yet", {
+                description: `"${resource.title}" will be available for download soon.`,
+              });
+            }
+          }}
+          className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+        >
           <Download className="w-4 h-4" />
           Download PDF
         </button>
-        <button className="flex items-center justify-center px-3 py-2.5 rounded-xl glass text-muted-foreground hover:text-foreground transition-colors">
+        <button
+          onClick={() => {
+            toast.info("Preview coming soon", {
+              description: "The document viewer is under development.",
+            });
+          }}
+          className="flex items-center justify-center px-3 py-2.5 rounded-xl glass text-muted-foreground hover:text-foreground transition-colors"
+        >
           <Eye className="w-4 h-4" />
         </button>
       </div>
