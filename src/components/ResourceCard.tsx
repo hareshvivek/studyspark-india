@@ -69,7 +69,7 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
         >
           <Download className="w-4 h-4" />
           Download PDF
-        </button>
+        </a>
         <button
           onClick={() => {
             toast.info("Preview coming soon", {
