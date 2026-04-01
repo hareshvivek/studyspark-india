@@ -1,4 +1,5 @@
 import { Download, Eye, BookOpen, FlaskConical, Calculator, Cpu, Landmark, DollarSign, Leaf, PenLine } from "lucide-react";
+import { toast } from "sonner";
 import type { Resource } from "@/lib/data";
 
 const subjectIcons: Record<string, React.ElementType> = {
