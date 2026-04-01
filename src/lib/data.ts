@@ -21,16 +21,16 @@ export const subjects = [
 ];
 
 export const mockResources: Resource[] = [
-  { id: "1", title: "Quadratic Equations – Complete Notes", class_level: 10, subject: "Mathematics", board: "CBSE", type: "Notes", file_url: "#" },
-  { id: "2", title: "Physics PYQ 2024", class_level: 12, subject: "Physics", board: "CBSE", type: "PYQs", year: 2024, file_url: "#" },
-  { id: "3", title: "Organic Chemistry Question Bank", class_level: 11, subject: "Chemistry", board: "CBSE", type: "Question Bank", file_url: "#" },
-  { id: "4", title: "Biology – Cell Division Notes", class_level: 11, subject: "Biology", board: "ICSE", type: "Notes", file_url: "#" },
-  { id: "5", title: "English Literature PYQ 2023", class_level: 10, subject: "English", board: "ICSE", type: "PYQs", year: 2023, file_url: "#" },
-  { id: "6", title: "Trigonometry Question Bank", class_level: 9, subject: "Mathematics", board: "CBSE", type: "Question Bank", file_url: "#" },
-  { id: "7", title: "Python Programming Notes", class_level: 12, subject: "Computer Science", board: "CBSE", type: "Notes", file_url: "#" },
-  { id: "8", title: "Economics PYQ 2024", class_level: 12, subject: "Economics", board: "CBSE", type: "PYQs", year: 2024, file_url: "#" },
-  { id: "9", title: "Accountancy – Partnership Firms", class_level: 12, subject: "Accountancy", board: "CBSE", type: "Notes", file_url: "#" },
-  { id: "10", title: "Chemistry PYQ 2023", class_level: 11, subject: "Chemistry", board: "ICSE", type: "PYQs", year: 2023, file_url: "#" },
-  { id: "11", title: "Mathematics PYQ 2024", class_level: 9, subject: "Mathematics", board: "CBSE", type: "PYQs", year: 2024, file_url: "#" },
-  { id: "12", title: "Physics – Optics Notes", class_level: 12, subject: "Physics", board: "CBSE", type: "Notes", file_url: "#" },
+  { id: "1", title: "Quadratic Equations – Complete Notes", class_level: 10, subject: "Mathematics", board: "CBSE", type: "Notes", file_url: "https://ncert.nic.in/textbook/pdf/jemh104.pdf" },
+  { id: "2", title: "Physics PYQ 2024", class_level: 12, subject: "Physics", board: "CBSE", type: "PYQs", year: 2024, file_url: "https://ncert.nic.in/textbook/pdf/leph101.pdf" },
+  { id: "3", title: "Organic Chemistry Question Bank", class_level: 11, subject: "Chemistry", board: "CBSE", type: "Question Bank", file_url: "https://ncert.nic.in/textbook/pdf/kech201.pdf" },
+  { id: "4", title: "Biology – Cell Division Notes", class_level: 11, subject: "Biology", board: "ICSE", type: "Notes", file_url: "https://ncert.nic.in/textbook/pdf/kebo110.pdf" },
+  { id: "5", title: "English Literature PYQ 2023", class_level: 10, subject: "English", board: "ICSE", type: "PYQs", year: 2023, file_url: "https://ncert.nic.in/textbook/pdf/jefp101.pdf" },
+  { id: "6", title: "Trigonometry Question Bank", class_level: 9, subject: "Mathematics", board: "CBSE", type: "Question Bank", file_url: "https://ncert.nic.in/textbook/pdf/iemh108.pdf" },
+  { id: "7", title: "Python Programming Notes", class_level: 12, subject: "Computer Science", board: "CBSE", type: "Notes", file_url: "https://ncert.nic.in/textbook/pdf/lecs101.pdf" },
+  { id: "8", title: "Economics PYQ 2024", class_level: 12, subject: "Economics", board: "CBSE", type: "PYQs", year: 2024, file_url: "https://ncert.nic.in/textbook/pdf/leec201.pdf" },
+  { id: "9", title: "Accountancy – Partnership Firms", class_level: 12, subject: "Accountancy", board: "CBSE", type: "Notes", file_url: "https://ncert.nic.in/textbook/pdf/leac201.pdf" },
+  { id: "10", title: "Chemistry PYQ 2023", class_level: 11, subject: "Chemistry", board: "ICSE", type: "PYQs", year: 2023, file_url: "https://ncert.nic.in/textbook/pdf/kech101.pdf" },
+  { id: "11", title: "Mathematics PYQ 2024", class_level: 9, subject: "Mathematics", board: "CBSE", type: "PYQs", year: 2024, file_url: "https://ncert.nic.in/textbook/pdf/iemh101.pdf" },
+  { id: "12", title: "Physics – Optics Notes", class_level: 12, subject: "Physics", board: "CBSE", type: "Notes", file_url: "https://ncert.nic.in/textbook/pdf/leph109.pdf" },
 ];
