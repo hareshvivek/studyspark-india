@@ -53,11 +53,13 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
       </div>
 
       <div className="flex gap-2 pt-1">
-        <button
-          onClick={() => {
-            if (resource.file_url && resource.file_url !== "#") {
-              window.open(resource.file_url, "_blank");
-            } else {
+        <a
+          href={resource.file_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            if (!resource.file_url || resource.file_url === "#") {
+              e.preventDefault();
               toast.info("PDF not available yet", {
                 description: `"${resource.title}" will be available for download soon.`,
               });
@@ -67,7 +69,7 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
         >
           <Download className="w-4 h-4" />
           Download PDF
-        </button>
+        </a>
         <button
           onClick={() => {
             toast.info("Preview coming soon", {
