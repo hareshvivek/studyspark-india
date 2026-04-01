@@ -22,6 +22,30 @@ const typeColors: Record<string, string> = {
 const ResourceCard = ({ resource }: { resource: Resource }) => {
   const Icon = subjectIcons[resource.subject] || BookOpen;
 
+  const handleDownload = () => {
+    if (!resource.file_url || resource.file_url === "#") {
+      toast.info("PDF not available yet", {
+        description: `"${resource.title}" will be available for download soon.`,
+      });
+      return;
+    }
+
+    const fileName = `${resource.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "") || "resource"}.pdf`;
+
+    const link = document.createElement("a");
+    link.href = resource.file_url;
+    link.download = fileName;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
   return (
     <div className="glass rounded-2xl p-5 card-shadow hover:scale-[1.02] transition-all duration-300 group flex flex-col gap-4">
       <div className="flex items-start justify-between">
@@ -54,36 +78,8 @@ const ResourceCard = ({ resource }: { resource: Resource }) => {
 
       <div className="flex gap-2 pt-1">
         <button
-          onClick={async () => {
-            if (!resource.file_url || resource.file_url === "#") {
-              toast.info("PDF not available yet", {
-                description: `"${resource.title}" will be available for download soon.`,
-              });
-              return;
-            }
-
-            try {
-              const response = await fetch(resource.file_url);
-              if (!response.ok) throw new Error("Download failed");
-
-              const blob = await response.blob();
-              const blobUrl = window.URL.createObjectURL(blob);
-              const link = document.createElement("a");
-              const fileName = `${resource.title
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/(^-|-$)/g, "") || "resource"}.pdf`;
-
-              link.href = blobUrl;
-              link.download = fileName;
-              document.body.appendChild(link);
-              link.click();
-              link.remove();
-              window.URL.revokeObjectURL(blobUrl);
-            } catch (error) {
-              window.open(resource.file_url, "_blank", "noopener,noreferrer");
-            }
-          }}
+          type="button"
+          onClick={handleDownload}
           className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
         >
           <Download className="w-4 h-4" />
